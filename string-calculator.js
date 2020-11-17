@@ -1,6 +1,7 @@
 const stringCalculator = {
-    add: function(params) {
-        return 0;
+    add: (params) => {
+        if (params.length === 0) return 0;
+        return parseInt(params);
     }
 }
 
