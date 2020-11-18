@@ -4,8 +4,8 @@ const stringCalculator = {
         let splitStringBySeparator;
         const separatedLinesOfString = params.split("\n");
         if (separatedLinesOfString[0].substring(0, 2) === "//") {
-            let separator = params.substring(2, 3);
-            let calculationString = params.substring(3);
+            const separator = separatedLinesOfString[0].substring(2);
+            const calculationString = params.substring(separatedLinesOfString[0].length + 1)
             splitStringBySeparator = calculationString.split(separator);
         } else {
             const noNewLinesInString = params.replace("\n", ",");

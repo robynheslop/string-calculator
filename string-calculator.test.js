@@ -34,4 +34,7 @@ describe("string calculator", () => {
     it("can define new 1 char separator starting with // at beginning of first line - handle negative value", () => {
         expect(stringCalculator.add("//^\n0^5^4^-6")).toBe("negatives are not allowed: -6");
     });
+    it("can define new multi char separator starting with // at beginning of first line", () => {
+        expect(stringCalculator.add("//$$\n5$$4$$6$$7")).toBe(22);
+    })
 })
