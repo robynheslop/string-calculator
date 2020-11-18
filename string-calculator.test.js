@@ -19,4 +19,7 @@ describe("string calculator", () => {
     it("receives a negative number, throws an exception", () => {
         expect(stringCalculator.add("-1,2,-3")).toBe("negatives are not allowed: -1,-3");
     });
+    it("ignores numbers greater than 1000", () => {
+        expect(stringCalculator.add("1,2\n1001")).toBe(3);
+    });
 })

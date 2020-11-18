@@ -4,11 +4,12 @@ const stringCalculator = {
         const noNewLinesInString = params.replace("\n", ",");
         const splitByCommaArray = noNewLinesInString.split(",");
         const arrayOfNumberValues = splitByCommaArray.map(number => parseInt(number));
-        const negativeNumbers = arrayOfNumberValues.filter(number => number < 0 ? number : null);
+        const filteredOutLargeNumbers = arrayOfNumberValues.filter(number => number <= 1000 ? number : null);
+        const negativeNumbers = filteredOutLargeNumbers.filter(number => number < 0 ? number : null);
         if (negativeNumbers.length > 0) {
             return `negatives are not allowed: ${negativeNumbers}`
         }
-        const sumOfArrayOfNumbers = arrayOfNumberValues.reduce((a, b) => a + b);
+        const sumOfArrayOfNumbers = filteredOutLargeNumbers.reduce((a, b) => a + b);
         return sumOfArrayOfNumbers;
     }
 }
