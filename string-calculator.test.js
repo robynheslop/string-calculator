@@ -22,4 +22,7 @@ describe("string calculator", () => {
     it("ignores numbers greater than 1000", () => {
         expect(stringCalculator.add("1,2\n1001")).toBe(3);
     });
+    it("ignores numbers greater than 1000", () => {
+        expect(stringCalculator.add("0\n1001,0")).toBe(0);
+    });
 })
