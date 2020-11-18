@@ -28,4 +28,7 @@ describe("string calculator", () => {
     it("can define new 1 char separator starting with // at beginning of first line", () => {
         expect(stringCalculator.add("//&\n1&2&3")).toBe(6);
     });
+    it("can define new 1 char separator starting with // at beginning of first line - handle 0 value", () => {
+        expect(stringCalculator.add("//#\n0#5#4")).toBe(9);
+    });
 })
