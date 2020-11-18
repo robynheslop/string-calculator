@@ -10,4 +10,7 @@ describe("string calculator", () => {
     it("receives 2 numbers separated by comma, returns the sum", () => {
         expect(stringCalculator.add("1,2")).toBe(3);
     });
+    it("receives 2 numbers separated by new line, returns the sum", () => {
+        expect(stringCalculator.add("1\n2")).toBe(3);
+    });
 })
