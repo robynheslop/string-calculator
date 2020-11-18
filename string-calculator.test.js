@@ -25,4 +25,7 @@ describe("string calculator", () => {
     it("ignores numbers greater than 1000", () => {
         expect(stringCalculator.add("0\n1001,0")).toBe(0);
     });
+    it("can define new 1 char separator starting with // at beginning of first line", () => {
+        expect(stringCalculator.add("//&\n1&2&3")).toBe(6);
+    });
 })
