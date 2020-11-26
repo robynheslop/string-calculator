@@ -7,4 +7,7 @@ describe("string-calculator", () => {
     it("receives '1', returns 1", () => {
         expect(stringCalculator("1")).toBe(1);
     });
+    it("receives input that is not a string, throws error", () =>{
+        expect(stringCalculator(1)).toBe("Error: not a string input");
+    })
 });
