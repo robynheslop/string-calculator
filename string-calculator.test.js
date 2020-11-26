@@ -9,5 +9,11 @@ describe("string-calculator", () => {
     });
     it("receives input that is not a string, throws error", () =>{
         expect(stringCalculator(1)).toBe("Error: not a string input");
-    })
+    });
+    it("receives string of 2 numbers, returns sum of numbers", () =>{
+        expect(stringCalculator("1,2")).toBe(3);
+    });
+    it("receives string of 3 numbers, returns sum of numbers", () =>{
+        expect(stringCalculator("1,2,3")).toBe(6);
+    });
 });
