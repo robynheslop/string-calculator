@@ -19,4 +19,7 @@ describe("string-calculator", () => {
     it("receives numbers with decimal places, returns sum", () => {
         expect(stringCalculator("1.4,2.2")).toBe(3.6);
     });
+    it("receives numbers separated by '\n' or ',' and returns sum", () => {
+        expect(stringCalculator("1,4\n3,7")).toBe(15);
+    });
 });
