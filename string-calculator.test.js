@@ -16,4 +16,7 @@ describe("string-calculator", () => {
     it("receives string of 3 numbers, returns sum of numbers", () =>{
         expect(stringCalculator("1,2,3")).toBe(6);
     });
+    it("receives numbers with decimal places, returns sum", () => {
+        expect(stringCalculator("1.4,2.2")).toBe(3.6);
+    });
 });

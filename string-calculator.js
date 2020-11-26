@@ -3,7 +3,7 @@ const stringCalculator = params => {
     if (typeof(params) !== "string") return "Error: not a string input";
     const arrayOfNumbersAsStrings = params.split(',');
     const sumOfNumbers = arrayOfNumbersAsStrings
-            .map(number => parseInt(number))
+            .map(number => parseFloat(number))
             .reduce((a,b) => a + b);
     return sumOfNumbers;
 };
