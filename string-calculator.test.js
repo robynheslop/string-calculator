@@ -34,4 +34,7 @@ describe("string-calculator", () => {
     it("defines a new separator by //separator\n", () => {
         expect(stringCalculator("//*\n2*5*8")).toBe(15);
     });
+    it("defines a new, 2 character", () => {
+        expect(stringCalculator("//pp\n2pp1pp8")).toBe(11);
+    });
 });
