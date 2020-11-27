@@ -31,4 +31,7 @@ describe("string-calculator", () => {
     it("receives string that ends in separator, returns error", () => {
         expect(stringCalculator("2,5\n")).toBe("Error: number expected but EOF found");
     });
+    it("defines a new separator by //separator\n", () => {
+        expect(stringCalculator("//*\n2*5*8")).toBe(15);
+    });
 });
