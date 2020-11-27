@@ -22,4 +22,7 @@ describe("string-calculator", () => {
     it("receives numbers separated by '\n' or ',' and returns sum", () => {
         expect(stringCalculator("1,4\n3,7")).toBe(15);
     });
+    it("receives 2 separators together, returns error", () => {
+        expect(stringCalculator("1,4,\n3,7")).toBe("Error: number expected but \n found at position 5");
+    });
 });
