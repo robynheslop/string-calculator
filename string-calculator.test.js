@@ -25,4 +25,10 @@ describe("string-calculator", () => {
     it("receives 2 separators together, returns error", () => {
         expect(stringCalculator("1,4,\n3,7")).toBe("Error: number expected but \n found at position 5");
     });
+    it("receives string that ends in separator, returns error", () => {
+        expect(stringCalculator("2,5,")).toBe("Error: number expected but EOF found");
+    });
+    it("receives string that ends in separator, returns error", () => {
+        expect(stringCalculator("2,5\n")).toBe("Error: number expected but EOF found");
+    });
 });
