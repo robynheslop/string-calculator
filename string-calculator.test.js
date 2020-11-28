@@ -43,4 +43,7 @@ describe("string-calculator", () => {
     it("when new separator defined, using new line separator throws error", () => {
         expect(stringCalculator("//#\n1#5\n8#9")).toBe("Error: '#' expected but '\n' found at position 8.");
     });
+    it("receives one negative number, returns error", () => {
+        expect(stringCalculator("-1,2")).toBe("Error, negative numbers are not allowed: -1");
+    });
 });

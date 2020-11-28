@@ -24,9 +24,14 @@ const stringCalculator = params => {
             .split(',');
     }
 
-    const sumOfNumbers = arrayOfNumbersAsStrings
-        .map(number => parseFloat(number))
-        .reduce((a, b) => a + b);
+    const arrayOfNumbers = arrayOfNumbersAsStrings.map(number => parseFloat(number));
+    // filter for negative numbers - if found, return error
+    const negativeNumbers = arrayOfNumbers.filter(number => {
+        if (number < 0) return number;
+    });
+    if (negativeNumbers.length) return `Error, negative numbers are not allowed: ${negativeNumbers}`
+
+    const sumOfNumbers = arrayOfNumbers.reduce((a, b) => a + b);
     return sumOfNumbers;
 };
 
