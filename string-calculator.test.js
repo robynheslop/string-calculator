@@ -46,4 +46,7 @@ describe("string-calculator", () => {
     it("receives one negative number, returns error", () => {
         expect(stringCalculator("-1,2")).toBe("Error, negative numbers are not allowed: -1");
     });
+    it("receives 2 negative numbers, returns error showing both", () => {
+        expect(stringCalculator("-1,-2,5")).toBe("Error, negative numbers are not allowed: -1, -2");
+    });
 });

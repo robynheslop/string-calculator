@@ -29,7 +29,7 @@ const stringCalculator = params => {
     const negativeNumbers = arrayOfNumbers.filter(number => {
         if (number < 0) return number;
     });
-    if (negativeNumbers.length) return `Error, negative numbers are not allowed: ${negativeNumbers}`
+    if (negativeNumbers.length) return `Error, negative numbers are not allowed: ${negativeNumbers.join(', ')}`
 
     const sumOfNumbers = arrayOfNumbers.reduce((a, b) => a + b);
     return sumOfNumbers;
