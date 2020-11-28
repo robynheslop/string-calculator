@@ -49,4 +49,7 @@ describe("string-calculator", () => {
     it("receives 2 negative numbers, returns error showing both", () => {
         expect(stringCalculator("-1,-2,5")).toBe("Error, negative numbers are not allowed: -1, -2");
     });
+    it("receives 2 errors in string, returns 2 error messages separated by new lines", () => {
+        expect(stringCalculator("-1,-2,5\n")).toBe("Error: number expected but EOF found\nError, negative numbers are not allowed: -1, -2");
+    });
 });
