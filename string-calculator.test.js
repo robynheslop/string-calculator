@@ -40,4 +40,7 @@ describe("string-calculator", () => {
     it("when new separator defined, using other separators throws error", () => {
         expect(stringCalculator("//$$\n2$$5,8")).toBe("Error: '$$' expected but ',' found at position 10.");
     });
+    it("when new separator defined, using new line separator throws error", () => {
+        expect(stringCalculator("//#\n1#5\n8#9")).toBe("Error: '#' expected but '\n' found at position 8.");
+    });
 });

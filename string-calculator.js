@@ -8,15 +8,13 @@ const stringCalculator = params => {
     if (params.startsWith("//")) {
         separator = params.slice(2, (params.indexOf("\n")));
         let calculationString = params.slice((params.indexOf("\n") + 1));
-        let regexp = RegExp(`[^${separator}^0-9]`);
         if (params.endsWith(separator)) return "Error: number expected but EOF found";
-        if (calculationString.match(regexp)) {
-            const wrongCharacter = calculationString.match(regexp);
-            if (wrongCharacter) return `Error: '${separator}' expected but '${wrongCharacter}' found at position ${params.indexOf(wrongCharacter) + 1}.`;
+        if (calculationString.match(RegExp(`[^${separator}^0-9]`))) {
+            const wrongCharacter = calculationString.match(RegExp(`[^${separator}^0-9]`));
+            const wrongCharacterIndex = wrongCharacter.index + params.slice(0, (params.indexOf("\n"))).length + 2
+            if (wrongCharacter) return `Error: '${separator}' expected but '${wrongCharacter}' found at position ${wrongCharacterIndex}.`;
         }
-        arrayOfNumbersAsStrings = params
-            .slice((params.indexOf("\n") + 1))
-            .split(separator);
+        arrayOfNumbersAsStrings = calculationString.split(separator);
 
     } else {
         if (params.search(",\n") !== -1) return `Error: number expected but \n found at position ${(params.search(",\n") + 2)}`;
