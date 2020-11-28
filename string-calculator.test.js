@@ -34,7 +34,10 @@ describe("string-calculator", () => {
     it("defines a new separator by //separator\n", () => {
         expect(stringCalculator("//*\n2*5*8")).toBe(15);
     });
-    it("defines a new, 2 character", () => {
+    it("defines a new, 2 character separator", () => {
         expect(stringCalculator("//pp\n2pp1pp8")).toBe(11);
+    });
+    it("when new separator defined, using other separators throws error", () => {
+        expect(stringCalculator("//$$\n2$$5,8")).toBe("Error: '$$' expected but ',' found at position 10.");
     });
 });
